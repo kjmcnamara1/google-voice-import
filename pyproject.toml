@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "google-voice-import"
+version = "0.1.0"
+description = "Package to convert exported data from Google Takeout into an importable xml file"
+authors = ["Kevin J. McNamara <kjmcnamara1@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "google_voice_import", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
