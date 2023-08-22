@@ -3,62 +3,64 @@ from dataclasses import dataclass
 
 @dataclass
 class MMSPart:
-    seq:int
-    ct:str
-    name:str
-    chset:int|None=None
-    cd:
-    fn:
-    cid:str
-    cl:str
-    ctt_s:
-    ctt_t:
-    text:str
+    seq: int
+    ct: str
+    name: str
+    chset: int | None = None
+    cd: float | None = None
+    fn: float | None = None
+    cid: str
+    cl: str
+    ctt_s: float | None = None
+    ctt_t: float | None = None
+    text: str
+
 
 @dataclass
 class MMSAddr:
-    address:str
-    type:int
-    charset:int
+    address: str
+    type: int
+    charset: int
+
 
 @dataclass
 class MMSMessage:
     date: int
-    rr: float
-    sub: str
-    ct_t: str
-    read_status: float
-    seen: int
+    rr: float | None = None
+    sub: str | None = None
+    ct_t: str | None = None
+    read_status: int | None = None
+    seen: int = 1
     msg_box: int
     address: str
-    sub_cs: float
-    resp_st: float
-    retr_st: float
-    d_tm: float
+    sub_cs: int | None = None
+    resp_st: float | None = None
+    retr_st: float | None = None
+    d_tm: float | None = None
     text_only: int
-    exp: float
-    locked: int
-    m_id: float
-    st: float
-    retr_txt_cs: float
-    retr_txt: float
-    creator: str
-    date_sent: int
-    read: int
-    m_size: float
-    rpt_a: float
-    ct_cls: float
-    pri: float
-    sub_id: int
+    exp: int | None = None
+    locked: int=0
+    m_id: float | None = None
+    st: float | None = None
+    retr_txt_cs: float | None = None
+    retr_txt: float | None = None
+    creator: str = "com.android.providers.telephony"
+    date_sent: int=0
+    read: int=1
+    m_size: int | None = None
+    rpt_a: float | None = None
+    ct_cls: float | None = None
+    pri: int | None = None
+    sub_id: int=-1
     tr_id: str
-    resp_txt: float
-    ct_l: str
-    m_cls: str
-    d_rpt: float
-    v: float
+    resp_txt: float | None = None
+    ct_l: str | None = None
+    m_cls: str | None = None
+    d_rpt: float | None = None
+    v: float | None = None
     _id: int
-    m_type: int
+    m_type: int=132
     readable_date: str
-    contact_name: str
+    contact_name: str ="(Unknown)"
     parts: list[MMSPart]
     addrs: list[MMSAddr]
